@@ -22,4 +22,4 @@ def test_get_pokemon_details():
       assert "types" in details
 def test_get_pokemon_details_with_invalid_url():
       with pytest.raises(Exception):
-          get_pokemon_details("https://pokeapi.co/api/v2/pokemon/invalid-url")
+            get_pokemon_details("https://pokeapi.co/api/v2/pokemon/invalid-url")
