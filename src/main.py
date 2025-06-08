@@ -1,33 +1,23 @@
 import logging
-from src.api_client import get_pokemon_list, get_pokemon_details
-from src.data_extraction import process_pokemon_details
+import pandas as pd
+from src.data_extraction import extract_all_pokemon_data
 
-logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 def main():
     logger.info("Iniciando extração de dados dos Pokémons...")
+    data = extract_all_pokemon_data(limit=100)
 
-    pokemons_list = get_pokemon_list(limit=10, offset=0)
-
-    if not pokemons_list:
-        logger.warning("Nenhum Pokémon foi retornado.")
+    if data.empty:
+        logger.warning("Nenhum dado foi extraído. Encerrando execução.")
         return
 
-    logger.info(f"{len(pokemons_list)} Pokémons encontrados. Iniciando coleta de detalhes...")
+    df = pd.DataFrame(data)
+    logger.info(f"{len(df)} Pokémons carregados no DataFrame.")
 
-    for poke in pokemons_list:
-        nome = poke['name']
-        url = poke['url']
-        logger.info(f"Processando {nome.title()}...")
+    print("\n DataFrame:")
+    print(df.head())
 
-        detalhes = get_pokemon_details(url)
-        pokemon_formatado = process_pokemon_details(detalhes)
 
-        if pokemon_formatado:
-            print(pokemon_formatado)
-        else:
-            logger.warning(f"Não foi possível processar o Pokémon: {nome}")
-
-if __name__ == "__main__":
-    main()
+main()

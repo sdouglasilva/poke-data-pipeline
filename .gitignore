@@ -1,3 +1,6 @@
 .venv/
-.pytest_cache/
-.__pycache__
+*.pyc
+__pycache__/
+*.png
+*.csv
+*.log
