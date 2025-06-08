@@ -1,5 +1,6 @@
 from src.api_client import get_pokemon_list, get_pokemon_details
 import logging
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -54,7 +55,7 @@ def process_pokemon_details(pokemon_details: dict) -> dict:
 
     stats = extract_pokemon_stats(pokemon_details.get("stats", []))
     
-    processed = {
+    data_processed = {
         "ID": pokemon_details["id"],
         "Nome": pokemon_details["name"].title(),
         "Experiência Base": pokemon_details["base_experience"],
@@ -63,4 +64,29 @@ def process_pokemon_details(pokemon_details: dict) -> dict:
         "Ataque": stats["Ataque"],
         "Defesa": stats["Defesa"]
     }
-    return processed
+    return data_processed
+
+def extract_all_pokemon_data(limit=100):
+    """
+    Organiza os dados da api
+    Retorna um DataFrame com todas as informações da tarefa.
+    """
+    pokemons_list = extract_initial_pokemons()
+    data_processed_pokemons = []
+    for p in pokemons_list:
+        url = p.get('url')
+        name = p.get('name')
+        if not name:
+            logger.warning("Nome do Pokemon não encontrado. Pulando.............")
+            continue
+        details = get_pokemon_details(url)
+        if details is None:
+            logger.warning(f"O Pokemon{name} está sem detalhes")
+            continue
+        data_processed = process_pokemon_details(details)
+        if data_processed:
+            data_processed_pokemons.append(data_processed)
+    df = pd.DataFrame(data_processed_pokemons)
+    logger.info(f"{len(df)} Pokémons processados com sucesso.")
+    return df
+
