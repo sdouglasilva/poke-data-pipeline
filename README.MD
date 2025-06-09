@@ -14,7 +14,7 @@ O pipeline é dividido em módulos claros que cobrem as etapas de extração, tr
 * **Pipeline Automatizado:** Orquestra todas as etapas sequencialmente, com logging detalhado e tratamento de erros.
 
 ## Estrutura do Projeto
-
+```
 poke-data-pipeline/
 
 |── data/
@@ -36,6 +36,7 @@ poke-data-pipeline/
 └── requirements.txt         # Dependências do projeto
 
 ```
+
 ## Requisitos
 
 * Python 3.+
