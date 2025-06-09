@@ -3,11 +3,12 @@ import pandas as pd
 from src.data_extraction import extract_all_pokemon_data
 from src.data_analysis import data_analytics
 from src.data_reporting import generate_chart_pokemon_type_distribution, save_reports
+from utils.logger_config import setup_logging
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 def main():
+    setup_logging()
+    logger = logging.getLogger(__name__)
     logger.info("Iniciando extração de dados dos Pokémons...")
     data = extract_all_pokemon_data(limit=100)
 

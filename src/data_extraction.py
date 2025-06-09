@@ -11,7 +11,7 @@ def extract_initial_pokemons():
     Returns:
         list: Lista de dicionários com os dados dos Pokémons.
     """
-    logger.info("Iniciando extração de 100 Pokémons...")
+    logger.info("Iniciando extração de 100 Pokémons...['Logs de execução']")
     pokemons = get_pokemon_list(limit=100)
     if not pokemons:
         logger.warning("Nenhum Pokémon foi retornado.")
