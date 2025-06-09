@@ -37,6 +37,8 @@ def count_pokemons_by_type(df: pd.DataFrame) -> pd.DataFrame:
     counting = Counter(all_pokemons_type)
     df_types = pd.DataFrame.from_dict(counting, orient='index', columns=["Quantidade"])
     df_types = df_types.sort_values("Quantidade", ascending=False).head(5)
+    df_types = df_types.reset_index()
+    df_types.rename(columns={"index": "Tipos"}, inplace=True)
 
     logger.info("Contagem por tipo concluída.")
     return df_types
