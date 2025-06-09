@@ -93,10 +93,10 @@ Siga uma das opções abaixo para executar o pipeline.
 
 ## Critérios Atendidos
 
-* **Extração e Transformação:** Dados da PokeAPI são extraídos, categorizados, e análises estatísticas (médias, contagem por tipo, top 5) são realizadas.
-* **Relatório e Exportação:** Relatórios em CSV e gráficos em PNG são gerados e salvos.
-* **Pipeline Automatizado:** O processo é modularizado e executado em sequência (`src/main.py`).
-* **Logs e Erros:** O sistema de logging (`logging`) é implementado para rastrear o progresso e tratar falhas.
-* **Requisitos Técnicos:** Uso de `pandas`, `matplotlib`/`seaborn` (via `data_reporting`), `requests` (via `api_client`), e `logging`.
-* **Docker:** O projeto é conteinerizável e instruções de uso são fornecidas.
-* **Qualidade do Código:** A estrutura modular visa legibilidade e manutenibilidade.
+**Extração e Transformação:** Dados da PokeAPI são extraídos, categorizados, e análises estatísticas (médias, contagem por tipo, top 5) são realizadas.
+**Relatório e Exportação:** Relatórios em CSV e gráficos em PNG são gerados e salvos.
+**Pipeline Automatizado:** O processo é modularizado e executado em sequência (`src/main.py`).
+**Logs e Erros:** O sistema de logging (`logging`) é implementado para rastrear o progresso e tratar falhas.
+**Requisitos Técnicos:** Uso de `pandas`, `matplotlib`/`seaborn` (via `data_reporting`), `requests` (via `api_client`), e `logging`.
+**Docker:** O projeto é conteinerizável e instruções de uso são fornecidas.
+**Qualidade do Código:** A estrutura modular visa legibilidade e manutenibilidade.
