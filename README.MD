@@ -91,12 +91,29 @@ Siga uma das opções abaixo para executar o pipeline.
     * Este comando executará o pipeline dentro do container.
     * Os arquivos de log (`pipeline.log`) e os relatórios/gráficos serão gerados e salvos diretamente nas pastas `logs/` e `data/reports/` no seu sistema local.
 
-## Critérios Atendidos
+## O que foi entregue neste projeto
 
-**Extração e Transformação:** Dados da PokeAPI são extraídos, categorizados, e análises estatísticas (médias, contagem por tipo, top 5) são realizadas.
-**Relatório e Exportação:** Relatórios em CSV e gráficos em PNG são gerados e salvos.
-**Pipeline Automatizado:** O processo é modularizado e executado em sequência (`src/main.py`).
-**Logs e Erros:** O sistema de logging (`logging`) é implementado para rastrear o progresso e tratar falhas.
-**Requisitos Técnicos:** Uso de `pandas`, `matplotlib`/`seaborn` (via `data_reporting`), `requests` (via `api_client`), e `logging`.
-**Docker:** O projeto é conteinerizável e instruções de uso são fornecidas.
-**Qualidade do Código:** A estrutura modular visa legibilidade e manutenibilidade.
+Aqui está um resumo do que o nosso pipeline de dados faz e como ele foi construído:
+
+* **Entender os Pokémons (Extração e Transformação):**
+    * Conseguimos buscar informações detalhadas sobre 100 Pokémons diretamente da PokeAPI (como nome, tipos, HP e ataque).
+    * Organizamos esses dados em tabelas fáceis de usar.
+    * Classificamos cada Pokémon como "Fraco", "Médio" ou "Forte" com base na sua experiência.
+    * Descobrimos a quantidade de Pokémons de cada tipo e calculamos a média de HP, Ataque e Defesa por tipo, além de identificar os 5 Pokémons com mais experiência.
+
+* **Apresentar os Resultados (Relatório e Exportação):**
+    * Criamos relatórios claros em formato de tabela (CSV) com as análises feitas.
+    * Geramos um gráfico visual (em imagem PNG) que mostra a distribuição dos Pokémons por tipo, facilitando a visualização.
+
+* **Processo Automático (Pipeline):**
+    * Todo o processo de buscar, organizar e analisar os dados funciona de forma automática, seguindo uma sequência lógica de etapas.
+    * Implementamos um sistema para registrar o que está acontecendo (como um diário de bordo), o que nos ajuda a acompanhar o progresso e a identificar se algo deu errado durante a execução.
+
+* **Ferramentas Utilizadas:**
+    * Construímos este projeto usando ferramentas e bibliotecas Python que são padrão na indústria, como `pandas` para lidar com as tabelas de dados, `requests` para conversar com a PokeAPI e `matplotlib`/`seaborn` para criar os gráficos.
+
+* **Fácil de Rodar (Docker):**
+    * O projeto foi preparado para ser executado facilmente em qualquer computador usando Docker. Isso significa que ele já vem "empacotado" com tudo o que precisa, sem a necessidade de configurações complicadas.
+
+* **Código Organizado:**
+    * O código foi dividido em partes menores e bem organizadas, o que torna fácil de ler, entender e fazer futuras melhorias.
