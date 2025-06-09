@@ -1,37 +1,3 @@
-# PokeAPI Data Pipeline
-
-Este projeto implementa um pipeline Python para extrair, transformar e analisar dados de Pokémons utilizando a [PokeAPI](https://pokeapi.co/). Ele gera relatórios e gráficos, e é construído para ser modular, com tratamento de logs e capacidade de execução via Docker.
-
-## Visão Geral do Projeto
-
-O pipeline é dividido em módulos claros que cobrem as etapas de extração, transformação e relatório de dados.
-
-**Funcionalidades Principais:**
-
-* **Extração de Dados:** Coleta detalhes de 100 Pokémons (ID, Nome, Experiência Base, Tipos, HP, Ataque, Defesa) da PokeAPI.
-* **Transformação de Dados:**
-    * Categoriza Pokémons em "Fraco", "Médio" e "Forte" com base na Experiência Base.
-    * Calcula a distribuição de Pokémons por tipo.
-    * Determina a média de HP, Ataque e Defesa por tipo.
-    * Identifica os 5 Pokémons com maior experiência base.
-* **Relatório e Exportação:** Gera relatórios em formato CSV e gráficos em PNG (distribuição por tipo).
-* **Pipeline Automatizado:** Orquestra todas as etapas sequencialmente, com logging detalhado e tratamento de erros.
-
-
-
-## Estrutura do Projeto
-
-```
-
-Certo! Com base na sua arquitetura de pastas e nos requisitos do teste, vou criar um README.md que é direto, claro e foca nos pontos essenciais para o avaliador.
-
-README.md
-Markdown
-
-# PokeAPI Data Pipeline
-
-Este projeto implementa um pipeline Python para extrair, transformar e analisar dados de Pokémons utilizando a [PokeAPI](https://pokeapi.co/). Ele gera relatórios e gráficos, e é construído para ser modular, com tratamento de logs e capacidade de execução via Docker.
-
 ## Visão Geral do Projeto
 
 O pipeline é dividido em módulos claros que cobrem as etapas de extração, transformação e relatório de dados.
