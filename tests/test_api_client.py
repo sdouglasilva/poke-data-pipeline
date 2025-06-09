@@ -1,7 +1,7 @@
 import pytest
 from src.api_client import get_pokemon_list, get_pokemon_details
 
-
+##próxima etapa
 def test_get_pokemon_list():
       pokemons = get_pokemon_list(limit=5)
       assert isinstance(pokemons,list)
