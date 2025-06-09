@@ -9,7 +9,7 @@ def add_category(df: pd.DataFrame) -> pd.DataFrame:
     Adiciona uma coluna chamada 'Categoria' com base na experiência base.
     """
     logger.info("Adicionando coluna 'Categoria'...")
-
+    #Tarefa 2 - Categorização
     def classify_category(exp):
         if exp < 50:
             return "Fraco"

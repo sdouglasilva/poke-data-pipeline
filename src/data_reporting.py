@@ -8,17 +8,13 @@ def save_reports(resultados, output_dir="data/reports"):
     try:
         os.makedirs(output_dir, exist_ok=True)
         logging.info(f"Pasta '{output_dir}' verificada/criada com sucesso.")
-
         contagem_path = os.path.join(output_dir, "contagem_pokemon_tipo.csv")
         medias_path = os.path.join(output_dir, "medias_pokemon_tipo.csv")
         categorizados_path = os.path.join(output_dir, "dados_pokemon_categorizados.csv")
-
         resultados["contagem_por_tipo"].to_csv(contagem_path, index=False)
         logging.info(f"Relatório salvo: {contagem_path}")
-
         resultados["medias_por_tipo"].to_csv(medias_path, index=False)
         logging.info(f"Relatório salvo: {medias_path}")
-
         resultados["dados_com_categoria"].to_csv(categorizados_path, index=False)
         logging.info(f"Relatório salvo: {categorizados_path}")
 

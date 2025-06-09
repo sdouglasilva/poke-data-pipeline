@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def data_analytics(df):
-  "Realiza a análise dos dados dos Pokémons"
+  """"Realiza a análise dos dados dos Pokémons"""
   logger.info("Iniciando análise dos dados dos pokémons")
   df = add_category(df)
   types = count_pokemons_by_type(df)
