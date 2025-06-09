@@ -8,9 +8,9 @@ def setup_logging():
     log_file = os.path.join(log_dir, "pipeline.log")
     log_format = "%(asctime)s - %(levelname)s - %(message)s"
     date_format = "%Y-%m-%d %H:%M:%S"
-    logger = logging.getLogger() # Pega o logger root
+    logger = logging.getLogger() #Pegar o logger root
     if logger.handlers:
-        for handler in logger.handlers[:]: # Iterar sobre uma cópia da lista
+        for handler in logger.handlers[:]: # Iterar sobre uma cópia da lista para validar os logs
             logger.removeHandler(handler)
     logger.setLevel(logging.INFO)
     file_handler = logging.FileHandler(log_file)

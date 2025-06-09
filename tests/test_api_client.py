@@ -3,12 +3,12 @@ from src.api_client import get_pokemon_list, get_pokemon_details
 
 
 def test_get_pokemon_list():
-    pokemons = get_pokemon_list(limit=5)
-    assert isinstance(pokemons,list)
-    assert len(pokemons) == 5
-    for p in pokemons:
-      assert "name" in p
-      assert "url" in p
+      pokemons = get_pokemon_list(limit=5)
+      assert isinstance(pokemons,list)
+      assert len(pokemons) == 5
+      for p in pokemons:
+            assert "name" in p
+            assert "url" in p
 
 def test_get_pokemon_details():
       pokemons = get_pokemon_list(limit=1)
