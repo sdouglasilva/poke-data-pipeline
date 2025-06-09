@@ -19,7 +19,6 @@ def add_category(df: pd.DataFrame) -> pd.DataFrame:
             return "Forte"
 
     df["Categoria"] = df["Experiência Base"].apply(classify_category)
-
     logger.info("Coluna 'Categoria' adicionada com sucesso.")
     return df
 
@@ -37,7 +36,7 @@ def count_pokemons_by_type(df: pd.DataFrame) -> pd.DataFrame:
 
     counting = Counter(all_pokemons_type)
     df_types = pd.DataFrame.from_dict(counting, orient='index', columns=["Quantidade"])
-    df_types = df_types.sort_values("Quantidade", ascending=False)
+    df_types = df_types.sort_values("Quantidade", ascending=False).head(5)
 
     logger.info("Contagem por tipo concluída.")
     return df_types
@@ -72,6 +71,8 @@ def avg_by_type(df: pd.DataFrame) -> pd.DataFrame:
 
     df_results = pd.DataFrame(results)
     df_results = df_results.sort_values("Ataque Médio", ascending=False)
+    df_results.index = [f"{i+1}." for i in range(len(df_results))]
+    df_results.index.name = "Rank"
 
     logger.info("Médias calculadas com sucesso.")
     return df_results
