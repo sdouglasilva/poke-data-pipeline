@@ -2,6 +2,7 @@ import logging
 import pandas as pd
 from src.data_extraction import extract_all_pokemon_data
 from src.data_analysis import data_analytics
+from src.data_reporting import generate_chart_pokemon_type_distribution, save_reports
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -16,7 +17,10 @@ def main():
 
     df = pd.DataFrame(data)
     logger.info(f"{len(df)} Pokémons carregados no DataFrame.")
-    data_analytics(df)
+    
+    resultados = data_analytics(df)
+    save_reports(resultados)
+    generate_chart_pokemon_type_distribution(resultados["contagem_por_tipo"])
 
 
 
