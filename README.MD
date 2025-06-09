@@ -72,7 +72,7 @@ poke-data-pipeline/
 ```
 ## Requisitos
 
-* Python 3.8+
+* Python 3.+
 * Docker (para execução containerizada)
 
 As dependências Python estão listadas em `requirements.txt`.
