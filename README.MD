@@ -46,7 +46,6 @@ As dependências Python estão listadas em `requirements.txt`.
 
 ## Como Configurar e Executar
 
-Siga uma das opções abaixo para executar o pipeline.
 
 ### Opção 1: Execução Local
 
@@ -93,8 +92,6 @@ Siga uma das opções abaixo para executar o pipeline.
     * Os arquivos de log (`pipeline.log`) e os relatórios/gráficos serão gerados e salvos diretamente nas pastas `logs/` e `data/reports/` no seu sistema local.
 
 ## O que foi entregue neste projeto
-
-Aqui está um resumo do que o nosso pipeline de dados faz e como ele foi construído:
 
 * **Entender os Pokémons (Extração e Transformação):**
     * Conseguimos buscar informações detalhadas sobre 100 Pokémons diretamente da PokeAPI (como nome, tipos, HP e ataque).
