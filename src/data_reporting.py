@@ -4,6 +4,7 @@ import seaborn as sns
 
 
 def save_reports(resultados, output_dir="data/reports"):
+    """Salva dados já tratados em um .csv"""
     os.makedirs(output_dir, exist_ok=True)
     resultados["contagem_por_tipo"].to_csv(os.path.join(output_dir, "contagem_pokemon_tipo.csv"), index=False)
     resultados["medias_por_tipo"].to_csv(os.path.join(output_dir, "medias_pokemon_tipo.csv"), index=False)
