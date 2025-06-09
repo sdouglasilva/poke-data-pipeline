@@ -40,7 +40,7 @@ def get_pokemon_details(url: str) -> dict | None:
     Returns:
         dict ou none: Dicionário com dados de um Pokemon específico
     """
-    logger.debug(f"Requisitando detalhes do Pokemon: {url}")
+    logger.debug(f"Requisitando detalhes do Pokemon[DEBUG]: {url}")
     logger.info(f"Requisitando detalhes do Pokemon: {url}")
 
     try:
